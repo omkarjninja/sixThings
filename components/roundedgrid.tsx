@@ -185,10 +185,14 @@ const styles = StyleSheet.create({
 
   // back side styling
   back: {
+    width: "100%",
+    height: "100%",
     backgroundColor: "#0d0d0d",
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 10,
+    // paddingHorizontal: 10,
+    position: "absolute",
+    
   },
   backTitle: {
     color: "#fff",

@@ -21,7 +21,7 @@ function prettyDayMonth(date: Date) {
 }
 
 export default function BoxLayout() {
-  // default to Nov 20, 2025 (or use new Date() for today)
+  // default to Nov 19, 2025 (or use new Date() for today)
   const [selectedDate, setSelectedDate] = useState<Date>(new Date("2025-11-20"));
   const [dayCompletions, setDayCompletions] = useState<Record<string, boolean>>({});
   const [uid, setUid] = useState<string | null>(null);
@@ -211,7 +211,7 @@ export default function BoxLayout() {
 const styles = StyleSheet.create({
   header: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingHorizontal: 20, marginBottom: 8 },
   dateText: { color: "#000", fontWeight: "700", fontSize: 16 },
-  grid: { display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", padding: 20, height: "100%" },
+  grid: { flexDirection: "row", flexWrap: "wrap", justifyContent: "center", padding: 20, height: "100%",width: "100%" },
   box: { width: "88%", height: "7.5%", borderRadius: 20, backgroundColor: "#03ffb4", color: "#000", position: "absolute", display: "flex", bottom: 20, left: "4%", flexDirection: "row", alignItems: "center", justifyContent: "space-between", margin: "2%" },
   arrow: {},
 });
