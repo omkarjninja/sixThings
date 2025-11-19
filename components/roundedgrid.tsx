@@ -10,6 +10,7 @@ import {
   Alert,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import Icon from "./Icon";
 
 type Props = {
   label?: string;
@@ -100,7 +101,8 @@ export default function RoundedGrid({
         ]}
       >
         <View style={[styles.circle, special && styles.xyzCircle]}>
-          <Ionicons name={icon as any} size={22} color="#fff" />
+          {/* <Ionicons name={icon as any} size={22} color="#fff" /> */}
+          <Icon name={icon as string} size={22} color="#fff" />
         </View>
 
         <Text style={[styles.boxText, special && styles.xyzText]} numberOfLines={3}>
