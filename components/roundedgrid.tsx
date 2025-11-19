@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     margin: "1%",
   },
   box: {
-    position: "absolute",
+    // position: "absolute",
     width: "100%",
     height: "100%",
     borderRadius: 20,
