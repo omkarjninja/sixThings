@@ -8,6 +8,7 @@ const ION_TO_LUCIDE: Record<string, string> = {
   "color-palette": "Palette",
   "cash-outline": "Coins",
   sparkles: "Sparkles",
+  "infinite-outline": "Infinity",
 };
 
 type IconProps = {

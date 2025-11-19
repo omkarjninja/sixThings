@@ -212,6 +212,6 @@ const styles = StyleSheet.create({
   header: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingHorizontal: 20, marginBottom: 8 },
   dateText: { color: "#000", fontWeight: "700", fontSize: 16 },
   grid: { flexDirection: "row", flexWrap: "wrap", justifyContent: "center", padding: 20, height: "100%",width: "100%" },
-  box: { width: "88%", height: "7.5%", borderRadius: 20, backgroundColor: "#03ffb4", color: "#000", position: "absolute", display: "flex", bottom: -20, left: "4%", flexDirection: "row", alignItems: "center", justifyContent: "space-between", margin: "2%" },
+  box: { width: "88%", height: "7.5%", borderRadius: 20, backgroundColor: "#03ffb4", color: "#000", position: "absolute", display: "flex", bottom: 0, left: "4%", flexDirection: "row", alignItems: "center", justifyContent: "space-between", margin: "2%" },
   arrow: {},
 });
