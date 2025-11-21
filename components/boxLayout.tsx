@@ -22,7 +22,7 @@ function prettyDayMonth(date: Date) {
 
 export default function BoxLayout() {
   // default to Nov 19, 2025 (or use new Date() for today)
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date("2025-11-20"));
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const [dayCompletions, setDayCompletions] = useState<Record<string, boolean>>({});
   const [uid, setUid] = useState<string | null>(null);
   const [status, setStatus] = useState<string>("idle");
