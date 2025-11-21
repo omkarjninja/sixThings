@@ -8,6 +8,8 @@ import {
   Pressable,
   GestureResponderEvent,
   Alert,
+  Platform,
+  Vibration,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Icon from "./Icon";
@@ -18,8 +20,9 @@ type Props = {
   bgColor?: string;
   icon?: keyof typeof Ionicons.glyphMap;
   special?: boolean;
-  completed?: boolean;      // show check if true
-  onComplete?: () => void;  // call when user confirms completion
+  completed?: boolean; // show check if true
+  onComplete?: () => void; // call when user confirms completion
+  longPressDelay?: number; // optional override for delay in ms
 };
 
 export default function RoundedGrid({
@@ -28,8 +31,9 @@ export default function RoundedGrid({
   icon = "sparkles",
   special = false,
   task = "Complete this challenge.",
-  completed = false,        // <-- destructure prop with default
+  completed = false,
   onComplete,
+  longPressDelay = 450,
 }: Props) {
   const animated = useRef(new Animated.Value(0)).current;
   const [flipped, setFlipped] = useState(false);
@@ -59,9 +63,50 @@ export default function RoundedGrid({
     }).start(() => setFlipped(!flipped));
   };
 
+  // ---- long-press state + helpers ----
+  const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const longPressTriggered = useRef(false);
+
+  const startLongPress = (e?: GestureResponderEvent | any) => {
+    // On web, when pointerdown/touchstart begins, prevent selection & context menu interference
+    if (Platform.OS === "web" && e && e.nativeEvent) {
+      try {
+        // prevent default selection or context menu starting (best-effort)
+        e?.preventDefault?.();
+      } catch (err) {
+        // ignore
+      }
+    }
+
+    cancelLongPress();
+    longPressTriggered.current = false;
+    longPressTimer.current = setTimeout(() => {
+      longPressTriggered.current = true;
+
+      // haptic/vibration feedback
+      try {
+        if (Platform.OS === "web") {
+          (navigator as any)?.vibrate?.(40);
+        } else {
+          Vibration.vibrate(40);
+        }
+      } catch (err) {
+        // ignore
+      }
+
+      handleLongPress();
+    }, longPressDelay);
+  };
+
+  const cancelLongPress = () => {
+    if (longPressTimer.current) {
+      clearTimeout(longPressTimer.current);
+      longPressTimer.current = null;
+    }
+  };
+
   // Long press: confirm completion
   const handleLongPress = () => {
-    // simple native dialog
     Alert.alert(
       "Complete?",
       "Mark this task as completed?",
@@ -73,9 +118,7 @@ export default function RoundedGrid({
         {
           text: "Complete",
           onPress: () => {
-            // update internal UI immediately
             setIsCompleted(true);
-            // notify parent to persist
             onComplete?.();
           },
         },
@@ -84,12 +127,44 @@ export default function RoundedGrid({
     );
   };
 
+  // If long press fired, skip tap flip
+  const handlePress = () => {
+    if (longPressTriggered.current) {
+      longPressTriggered.current = false;
+      return;
+    }
+    flipCard();
+  };
+
+  // web-only props spread (typed as any to avoid TS errors)
+  const webProps = Platform.OS === "web"
+    ? ({
+        // block the right-click/long-press context menu interfering
+        onContextMenu: (e: any) => e.preventDefault(),
+        // pointer events for extra safety on web
+        onPointerDown: (e: any) => startLongPress(e),
+        onPointerUp: () => cancelLongPress(),
+        onPointerLeave: () => cancelLongPress(),
+      } as any)
+    : {};
+
   return (
     <Pressable
-      onPress={flipCard}
-      onLongPress={handleLongPress}
-      delayLongPress={400}
-      style={styles.container}
+      onPressIn={startLongPress}
+      onPressOut={cancelLongPress}
+      onPress={handlePress}
+      style={[
+        styles.container,
+        // prevent text selection on web
+        Platform.OS === "web"
+          ? {
+              userSelect: "none" as any,
+              WebkitUserSelect: "none" as any,
+              MozUserSelect: "none" as any,
+            }
+          : {},
+      ]}
+      {...webProps}
     >
       {/* Front */}
       <Animated.View
@@ -100,19 +175,28 @@ export default function RoundedGrid({
           { transform: [{ perspective: 1000 }, { rotateY: frontInterpolate }] },
         ]}
       >
-        <View style={[styles.circle, special && styles.xyzCircle]}>
-          {/* <Ionicons name={icon as any} size={22} color="#fff" /> */}
+        {/* make the icon area pressable independently (optional) */}
+        <Pressable
+          onPress={flipCard}
+          onPressIn={startLongPress}
+          onPressOut={cancelLongPress}
+          style={[styles.circle, special && styles.xyzCircle]}
+        >
           <Icon name={icon as string} size={22} color="#fff" />
-        </View>
+        </Pressable>
 
-        <Text style={[styles.boxText, special && styles.xyzText]} numberOfLines={3}>
+        <Text
+          style={[styles.boxText, special && styles.xyzText]}
+          numberOfLines={3}
+          selectable={false}
+        >
           {label}
         </Text>
 
         {/* completed overlay (small check) */}
         {isCompleted && (
           <View style={styles.completedBadge}>
-            <Ionicons name="checkmark" size={18} color="#fff" />
+            <Icon name="checkmark" size={18} color="#fff" />
           </View>
         )}
       </Animated.View>
@@ -125,15 +209,17 @@ export default function RoundedGrid({
           { transform: [{ perspective: 1000 }, { rotateY: backInterpolate }] },
         ]}
       >
-        <Text style={styles.backTitle}>Task</Text>
-        <Text style={styles.backText} numberOfLines={6}>
+        <Text style={styles.backTitle} selectable={false}>
+          Task
+        </Text>
+        <Text style={styles.backText} numberOfLines={6} selectable={false}>
           {task}
         </Text>
 
         {/* completed overlay also on back */}
         {isCompleted && (
           <View style={styles.completedBadgeBack}>
-            <Ionicons name="checkmark" size={18} color="#fff" />
+            <Icon name="checkmark" size={18} color="#fff" />
             <Text style={styles.completedText}>Completed</Text>
           </View>
         )}
@@ -194,7 +280,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     // paddingHorizontal: 10,
     position: "absolute",
-    
   },
   backTitle: {
     color: "#fff",
