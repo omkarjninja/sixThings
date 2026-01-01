@@ -351,9 +351,264 @@ export const tasksByDate: Record<string, DayTasks> =
   "mind": "Write one sentence that closes this year for you.",
   "charisma": "Say thank you to someone who helped you this year.",
   "money": "Review the month's finances and celebrate one money win."
+},
+    "2026-01-01": {
+  "physical": "Move your body gently for 5 minutes—no pressure.",
+  "intelligence": "Reflect on one thing you learned last year.",
+  "creation": "Write or sketch one idea you want to explore this year.",
+  "mind": "Ask: What do I want less of this year?",
+  "charisma": "Send a simple New Year check-in to someone.",
+  "money": "Look at your current balance without judgment."
+},
+"2026-01-02": {
+  "physical": "Go for a relaxed 10-minute walk.",
+  "intelligence": "Learn one small fact about something you enjoy.",
+  "creation": "Capture a photo of something that feels fresh.",
+  "mind": "Write one sentence about how today feels.",
+  "charisma": "Smile and greet someone first today.",
+  "money": "Track just one expense today."
+},
+"2026-01-03": {
+  "physical": "Stretch your back, neck, and legs for 4 minutes.",
+  "intelligence": "Read one short paragraph that interests you.",
+  "creation": "Doodle or sketch without a goal.",
+  "mind": "Notice one thought you repeat often.",
+  "charisma": "Reply thoughtfully to one message.",
+  "money": "Identify one unnecessary expense from last month."
+},
+"2026-01-04": {
+  "physical": "Do 10 bodyweight squats slowly.",
+  "intelligence": "Explain one simple concept out loud to yourself.",
+  "creation": "Write a one-line intention for January.",
+  "mind": "Remove one small distraction for an hour.",
+  "charisma": "Give a genuine compliment today.",
+  "money": "Set a rough saving intention (any amount)."
+},
+"2026-01-05": {
+  "physical": "Move intentionally for 5 minutes (walk, stretch, dance).",
+  "intelligence": "Learn one shortcut or tip in an app you use daily.",
+  "creation": "Save one idea somewhere you can revisit.",
+  "mind": "Write one thing you want to be consistent with.",
+  "charisma": "Ask someone how they’re really doing.",
+  "money": "Check one recurring expense."
+},
+"2026-01-06": {
+  "physical": "Do 15 jumping jacks or march in place.",
+  "intelligence": "Read one short explanation of a new term.",
+  "creation": "Make a rough layout or concept (no polish).",
+  "mind": "Pause for 60 seconds and breathe slowly.",
+  "charisma": "Start a conversation with curiosity.",
+  "money": "Note one way to save a little this week."
+},
+"2026-01-07": {
+  "physical": "Go for a 15-minute walk without distractions.",
+  "intelligence": "Summarize something you learned this week.",
+  "creation": "Create a small visual or note to mark Week 1.",
+  "mind": "Reflect: What felt easy to do this week?",
+  "charisma": "Thank someone for something specific.",
+  "money": "Review your spending mindset this week."
+},
+
+"2026-01-08": {
+  "physical": "Do 20 squats with steady breathing.",
+  "intelligence": "Break one small problem into steps.",
+  "creation": "Design or sketch one tiny improvement idea.",
+  "mind": "Choose one habit to focus on today.",
+  "charisma": "Be fully present in one conversation.",
+  "money": "Track all expenses today, even small ones."
+},
+"2026-01-09": {
+  "physical": "Hold a plank for 30 seconds.",
+  "intelligence": "Read one useful paragraph and apply the idea mentally.",
+  "creation": "Capture a 5-second clip or photo with intention.",
+  "mind": "Write one thought you want to let go of.",
+  "charisma": "Send a message that encourages someone.",
+  "money": "Identify one way to earn or save ₹100."
+},
+"2026-01-10": {
+  "physical": "Stretch hips and shoulders for 4 minutes.",
+  "intelligence": "Learn a small concept related to your work or interest.",
+  "creation": "Create one rough draft of anything.",
+  "mind": "Ask: What am I avoiding today?",
+  "charisma": "Speak clearly and slowly in one interaction.",
+  "money": "Check last 3 transactions and note patterns."
+},
+
+"2026-01-11": {
+  "physical": "Do 12 push-ups (modify if needed).",
+  "intelligence": "Explain a concept you know in one sentence.",
+  "creation": "Make something in under 10 minutes.",
+  "mind": "Write one thing that made you feel focused.",
+  "charisma": "Reach out to someone you respect.",
+  "money": "Set a simple spending limit for today."
+},
+"2026-01-12": {
+  "physical": "Walk briskly for 10 minutes.",
+  "intelligence": "Learn one new word and its meaning.",
+  "creation": "Sketch a simple interface or object.",
+  "mind": "Remove one digital distraction for 2 hours.",
+  "charisma": "Listen more than you speak today.",
+  "money": "Delay one purchase by 24 hours."
+},
+"2026-01-13": {
+  "physical": "Do 20 lunges (10 each leg).",
+  "intelligence": "Read a short opinion different from yours.",
+  "creation": "Combine two ideas into one concept.",
+  "mind": "Notice one habit you’re rebuilding.",
+  "charisma": "Ask someone a thoughtful follow-up question.",
+  "money": "Save any small amount today."
+},
+
+"2026-01-14": {
+  "physical": "Hold a wall sit for 40 seconds.",
+  "intelligence": "Watch a 2-minute explainer video.",
+  "creation": "Make a tiny improvement to something old.",
+  "mind": "Reflect: What’s getting easier now?",
+  "charisma": "Share something useful with someone.",
+  "money": "Review one subscription or recurring cost."
+},
+
+"2026-01-15": {
+  "physical": "Repeat an exercise you enjoyed this week.",
+  "intelligence": "Summarize one idea you learned recently.",
+  "creation": "Create without deleting anything.",
+  "mind": "Write one sentence about your current momentum.",
+  "charisma": "Check in with someone you haven’t spoken to recently.",
+  "money": "Plan one smart financial move for this month."
+},
+
+// --- Jan 16–31 (momentum + sharpening) ---
+"2026-01-16": {
+  "physical": "Increase intensity slightly in today’s movement.",
+  "intelligence": "Learn one small concept related to growth.",
+  "creation": "Build on something you already started.",
+  "mind": "Choose focus over speed today.",
+  "charisma": "Speak with confidence in one moment.",
+  "money": "Track spending for one full category."
+},
+"2026-01-17": {
+  "physical": "Do 25 jumping jacks or similar cardio.",
+  "intelligence": "Ask 'why' about a habit you have.",
+  "creation": "Create a variation of something you made before.",
+  "mind": "Write one rule you want to live by this month.",
+  "charisma": "Offer help without being asked.",
+  "money": "Identify one habit that leaks money."
+},
+"2026-01-18": {
+  "physical": "Stretch deeply for 5 minutes.",
+  "intelligence": "Learn one surprising fact.",
+  "creation": "Make a minimal version of an idea.",
+  "mind": "Slow down one task intentionally.",
+  "charisma": "Express appreciation clearly.",
+  "money": "Set a weekly savings target."
+},
+
+// You can continue this pattern for Jan 19–31 if you want,
+// or I can generate the remaining dates instantly.
+    "2026-01-19": {
+  "physical": "Do 20 bodyweight squats with controlled breathing.",
+  "intelligence": "Read one short explanation of a concept you usually skip.",
+  "creation": "Create a rough draft without aiming for quality.",
+  "mind": "Ask: What am I overcomplicating right now?",
+  "charisma": "Acknowledge someone’s effort sincerely.",
+  "money": "Review yesterday’s spending and note one insight."
+},
+"2026-01-20": {
+  "physical": "Go for a 15-minute walk and notice your posture.",
+  "intelligence": "Learn one small improvement for your daily workflow.",
+  "creation": "Capture one photo that feels intentional.",
+  "mind": "Write one sentence about what’s working lately.",
+  "charisma": "Start a conversation with curiosity, not purpose.",
+  "money": "Track every expense today without trying to optimize."
+},
+"2026-01-21": {
+  "physical": "Hold a plank for 40 seconds (or best effort).",
+  "intelligence": "Summarize one thing you learned this week.",
+  "creation": "Make a tiny improvement to something you already made.",
+  "mind": "Notice when you feel most focused today.",
+  "charisma": "Send a thoughtful follow-up message.",
+  "money": "Identify one expense you can reduce slightly."
+},
+"2026-01-22": {
+  "physical": "Stretch hips, back, and shoulders for 5 minutes.",
+  "intelligence": "Learn a basic principle behind something you use.",
+  "creation": "Sketch or write one new idea quickly.",
+  "mind": "Remove one distraction for the next hour.",
+  "charisma": "Give someone your full attention for one interaction.",
+  "money": "Set a simple spending intention for today."
+},
+"2026-01-23": {
+  "physical": "Do 25 jumping jacks or similar movement.",
+  "intelligence": "Ask one better question than yesterday.",
+  "creation": "Create something small and keep it unfinished.",
+  "mind": "Write one thing you’re getting better at.",
+  "charisma": "Express appreciation without expecting a reply.",
+  "money": "Save a small amount today, even symbolic."
+},
+"2026-01-24": {
+  "physical": "Walk briskly for 10 minutes.",
+  "intelligence": "Read a short paragraph and extract one idea.",
+  "creation": "Design a minimal layout or structure.",
+  "mind": "Reflect: What would make today feel complete?",
+  "charisma": "Reconnect casually with someone you know.",
+  "money": "Check your balance and observe your reaction."
+},
+"2026-01-25": {
+  "physical": "Repeat an exercise from earlier this month.",
+  "intelligence": "Explain something you understand to yourself clearly.",
+  "creation": "Make a simple visual or note to mark progress.",
+  "mind": "Write one lesson January is teaching you.",
+  "charisma": "Encourage someone who’s trying.",
+  "money": "Review spending from the last 7 days."
+},
+"2026-01-26": {
+  "physical": "Do 20 lunges (10 each leg).",
+  "intelligence": "Learn one practical tip related to your goals.",
+  "creation": "Create a variation of something you like.",
+  "mind": "Choose calm over speed today.",
+  "charisma": "Ask someone a meaningful, open question.",
+  "money": "Identify one habit that saves money over time."
+},
+"2026-01-27": {
+  "physical": "Hold a wall sit for 45 seconds.",
+  "intelligence": "Read a short explanation of a topic you avoid.",
+  "creation": "Make a rough plan for a future idea.",
+  "mind": "Notice one thought pattern you want to change.",
+  "charisma": "Be the first to reach out today.",
+  "money": "Delay one purchase by 48 hours."
+},
+"2026-01-28": {
+  "physical": "Move intentionally for 5 minutes (stretch or flow).",
+  "intelligence": "Summarize one insight from this week.",
+  "creation": "Create without checking references.",
+  "mind": "Write one sentence about your current direction.",
+  "charisma": "Say something kind out loud today.",
+  "money": "Plan one smart money move for February."
+},
+"2026-01-29": {
+  "physical": "Do 30 seconds of fast movement (run, jumps, etc.).",
+  "intelligence": "Learn one small concept in under 2 minutes.",
+  "creation": "Capture a short clip or image that feels real.",
+  "mind": "Reflect: What feels lighter than before?",
+  "charisma": "Thank someone who supported you this month.",
+  "money": "Note one financial win from January."
+},
+"2026-01-30": {
+  "physical": "Repeat your favorite movement from this month.",
+  "intelligence": "Write one thing you now understand better.",
+  "creation": "Create something just for yourself.",
+  "mind": "Decide one habit to carry into February.",
+  "charisma": "Share a genuine closing message with someone.",
+  "money": "Review January spending without judgment."
+},
+"2026-01-31": {
+  "physical": "Do a short full-body movement and breathe deeply.",
+  "intelligence": "Reflect on one idea that shaped your January.",
+  "creation": "Make a tiny ‘month complete’ note or visual.",
+  "mind": "Write one sentence that closes January.",
+  "charisma": "Express gratitude to yourself for showing up.",
+  "money": "Set one clear financial intention for February."
 }
-
-
 };
 
 ;
